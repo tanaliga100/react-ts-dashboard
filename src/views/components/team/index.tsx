@@ -55,10 +55,11 @@ const Team = (props: Props) => {
             p="3px"
             color={colors.primary[200]}
             sx={{
-              background:
-                (access === "admin" && colors.primary[900]) ||
-                (access === "manager" && colors.redAccent[900]) ||
-                (access === "user" && colors.greenAccent[900]),
+              backgroundColor: [
+                (access === "admin" && colors.greenAccent[700]) ||
+                  (access === "manager" && colors.redAccent[800]) ||
+                  (access === "user" && colors.greenAccent[900]),
+              ],
             }}
           >
             {access === "admin" && <AdminPanelSettingsOutlinedIcon />}

@@ -91,9 +91,12 @@ const Invoices = (props: Props) => {
           "& .MuiCheckbox-root": {
             color: colors.greenAccent[200],
           },
+          "& .PrivateSwitchBase-input ": {
+            color: colors.greenAccent[400],
+          },
         }}
       >
-        <DataGrid rows={mockDataInvoices} columns={columns} checkboxSelection />
+        <DataGrid checkboxSelection rows={mockDataInvoices} columns={columns} />
       </Box>
     </Box>
   );
