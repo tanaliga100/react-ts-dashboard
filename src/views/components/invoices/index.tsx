@@ -2,33 +2,33 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import { Box, Button, Typography, useTheme } from "@mui/material";
-import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
+import {
+  DataGrid,
+  GridColDef,
+  GridRenderCellParams,
+  GridToolbar,
+} from "@mui/x-data-grid";
 import React from "react";
-import { mockDataTeam } from "../../../data/mockData";
+import { mockDataInvoices } from "../../../data/mockData";
 import { tokens } from "../../../theme";
 import Header from "../../shared/Header";
 
 type Props = {};
 
-const Team = (props: Props) => {
+const Invoices = (props: Props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const columns: GridColDef[] = [
     { field: "id", headerName: "ID" },
+
     {
       field: "name",
       headerName: "NAME",
       flex: 1,
       cellClassName: "name=column--cell",
     },
-    {
-      field: "age",
-      headerName: "AGE",
-      type: "number",
-      headerAlign: "left",
-      align: "left",
-    },
+
     {
       field: "phone",
       headerName: "PHONE NUMBER",
@@ -40,42 +40,27 @@ const Team = (props: Props) => {
       flex: 1,
     },
     {
-      field: "access",
-      headerName: "ACCESS LEVEL",
+      field: "cost",
+      headerName: "COST",
       flex: 1,
-      renderCell: ({ row: { access } }) => {
+      renderCell: ({ row: { cost } }) => {
         return (
-          <Box
-            width="60%"
-            display="flex"
-            fontSize="1rem"
-            textTransform="uppercase"
-            justifyContent="center"
-            borderRadius="5px"
-            p="3px"
-            color={colors.primary[200]}
-            sx={{
-              background:
-                (access === "admin" && colors.primary[900]) ||
-                (access === "manager" && colors.redAccent[900]) ||
-                (access === "user" && colors.greenAccent[900]),
-            }}
-          >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[200]} sx={{ mx: "10px" }}>
-              {access}
-            </Typography>
-          </Box>
+          <Typography variant="h6" color={colors.greenAccent[500]}>
+            {cost}
+          </Typography>
         );
       },
     },
-  ];
 
+    {
+      field: "date",
+      headerName: "DATE",
+      flex: 1,
+    },
+  ];
   return (
     <Box m="20px">
-      <Header title="TEAM" subTitle="Managing the team members" />
+      <Header title="INVOICES" subTitle=" List of Invoice balances" />
       <Box
         m="40px 0 0 0"
         height="75vh"
@@ -94,21 +79,24 @@ const Team = (props: Props) => {
             borderBottom: "none",
           },
           "& .MuiDataGrid-virtaulScroller": {
-            backgroundColor: colors.primary[400],
+            backgroundColor: colors.primary[100],
           },
           "& .MuiDataGrid-footerContainer ": {
             borderTop: "none",
             backgroundColor: colors.blueAccent[800],
           },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: colors.grey[500],
+          },
+          "& .MuiCheckbox-root": {
+            color: colors.greenAccent[200],
+          },
         }}
       >
-        <DataGrid
-          rows={mockDataTeam}
-          columns={columns}
-          disableSelectionOnClick
-        />
+        <DataGrid rows={mockDataInvoices} columns={columns} checkboxSelection />
       </Box>
     </Box>
   );
 };
-export default Team;
+
+export default Invoices;

@@ -14,6 +14,8 @@ import { ColorModeContext, useMode } from "./theme";
 // import Team from "./views/Team";
 import DashBoard from "./views/components/dashboard";
 // import Calendar from "./views/shared/Calendar";
+import Contacts from "./views/components/contacts";
+import Invoices from "./views/components/invoices";
 import Team from "./views/components/team";
 import SideBar from "./views/shared/SideBar";
 import TopBar from "./views/shared/TopBar";
@@ -32,8 +34,8 @@ function App() {
             <Routes>
               <Route path="/" element={<DashBoard />} />
               <Route path="/team" element={<Team />} />
-              {/* <Route path="/contacts" element={<Contacts />} /> */}
-              {/* <Route path="/invoices" element={<Invoices />} /> */}
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/invoices" element={<Invoices />} />
               {/* <Route path="/form" element={<Form />} /> */}
               {/* <Route path="/bar" element={<Bar />} /> */}
               {/* <Route path="/pie" element={<Pie />} /> */}
