@@ -14,7 +14,6 @@ import { ColorModeContext, useMode } from "./theme";
 // import Team from "./views/Team";
 import DashBoard from "./views/pages/dashboard";
 // import Calendar from "./views/shared/Calendar";
-import Basic, { MyApp } from "./FormSample";
 import Contacts from "./views/pages/contacts";
 import FormComponent from "./views/pages/form";
 import Invoices from "./views/pages/invoices";

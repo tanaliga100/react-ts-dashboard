@@ -285,21 +285,21 @@ const SideBar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/profile.png`}
+                  src={`../../assets/logo.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
               <Box textAlign="center">
                 <Typography
-                  variant="h2"
+                  variant="h4"
                   color={colors.grey[100]}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  jordan100
+                  _xurpasAdmin
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
-                  Admin100
+                <Typography variant="h6" color={colors.greenAccent[500]}>
+                  VP_ADMIN
                 </Typography>
               </Box>
             </Box>

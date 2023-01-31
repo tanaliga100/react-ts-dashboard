@@ -1,7 +1,15 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { ErrorMessage, Field, Form, Formik, FormikProps } from "formik";
-import React, { FormEvent } from "react";
+import {
+  ErrorMessage,
+  Field,
+  Form,
+  Formik,
+  FormikErrors,
+  FormikProps,
+  validateYupSchema,
+} from "formik";
+import React, { FormEvent, useState } from "react";
 import * as yup from "yup";
 import Header from "../../shared/Header";
 
@@ -36,31 +44,40 @@ const InitialValues: FormValues = {
   address1: "",
   address2: "",
 };
-
 const FormComponent: React.FC = () => {
   const nonMobile = useMediaQuery("(min-width:600px)");
-
   // SUBMISSION HERE...
   const handleFormSubmit = (
     values: FormValues,
-    { setSubmitting }: { setSubmitting: (isSubmitting: boolean) => void }
+    {
+      setSubmitting,
+      setValues,
+    }: {
+      setSubmitting: (isSubmitting: boolean) => void;
+      setValues: (values: FormValues) => void;
+    }
   ) => {
     console.log("VALUES", values);
     setSubmitting(false);
+    setValues({
+      firstName: "",
+      lastName: "",
+      email: "",
+      contact: "",
+      address1: "",
+      address2: "",
+    } as FormValues);
   };
+
   return (
     <Box m="20px">
       <Header title="CREATE_USER" subTitle="Create a new user-profile" />
       <Formik
         onSubmit={handleFormSubmit}
-        // onSubmit={(values, { setSubmitting }) => {
-        //   console.log({ values });
-        //   setSubmitting(false);
-        // }}
         initialValues={InitialValues}
         validationSchema={userSchema}
       >
-        {/* FORM HERE LATER  */}
+        {/* FORM HERE */}
         {({
           values,
           errors,
@@ -166,7 +183,7 @@ const FormComponent: React.FC = () => {
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px" gap="20px">
-              <Button type="submit" color="secondary" variant="contained">
+              <Button type="button" color="secondary" variant="contained">
                 {" "}
                 Clear Fields
               </Button>
@@ -182,3 +199,8 @@ const FormComponent: React.FC = () => {
   );
 };
 export default FormComponent;
+
+// onSubmit={(values, { setSubmitting }) => {
+//   console.log({ values });
+//   setSubmitting(false);
+// }}
