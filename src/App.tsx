@@ -12,11 +12,13 @@ import { ColorModeContext, useMode } from "./theme";
 // import Line from "./views/Line";
 // import Pie from "./views/Pie";
 // import Team from "./views/Team";
-import DashBoard from "./views/components/dashboard";
+import DashBoard from "./views/pages/dashboard";
 // import Calendar from "./views/shared/Calendar";
-import Contacts from "./views/components/contacts";
-import Invoices from "./views/components/invoices";
-import Team from "./views/components/team";
+import Basic, { MyApp } from "./FormSample";
+import Contacts from "./views/pages/contacts";
+import FormComponent from "./views/pages/form";
+import Invoices from "./views/pages/invoices";
+import Team from "./views/pages/team";
 import SideBar from "./views/shared/SideBar";
 import TopBar from "./views/shared/TopBar";
 
@@ -36,7 +38,7 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
-              {/* <Route path="/form" element={<Form />} /> */}
+              <Route path="/form" element={<FormComponent />} />
               {/* <Route path="/bar" element={<Bar />} /> */}
               {/* <Route path="/pie" element={<Pie />} /> */}
               {/* <Route path="/line" element={<Line />} /> */}
