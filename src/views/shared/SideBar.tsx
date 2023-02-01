@@ -296,7 +296,7 @@ const SideBar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  _xurpasAdmin
+                  _blastAdmin
                 </Typography>
                 <Typography variant="h6" color={colors.greenAccent[500]}>
                   VP_ADMIN

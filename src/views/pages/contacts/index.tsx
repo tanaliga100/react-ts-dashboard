@@ -69,8 +69,8 @@ const Contacts = (props: Props) => {
         subTitle=" List of Contacts for future reference"
       />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m="10px 0 0 0"
+        height="60vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

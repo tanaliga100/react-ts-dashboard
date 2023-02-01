@@ -51,7 +51,6 @@ const Invoices = (props: Props) => {
         );
       },
     },
-
     {
       field: "date",
       headerName: "DATE",
@@ -62,8 +61,8 @@ const Invoices = (props: Props) => {
     <Box m="20px">
       <Header title="INVOICES" subTitle=" List of Invoice balances" />
       <Box
-        m="40px 0 0 0"
-        height="75vh"
+        m="10px 0 0 0"
+        height="60vh"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

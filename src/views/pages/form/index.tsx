@@ -88,9 +88,9 @@ const FormComponent: React.FC = () => {
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
-              py="40px"
+              m="10px 0 0 0"
               display="grid"
-              gap="40px"
+              gap="20px"
               gridTemplateColumns="repeat(4, minmax(0, 1fr)"
               sx={{
                 "& > div": {

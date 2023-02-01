@@ -8,13 +8,16 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 .app {
   display: flex;
   position: relative;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 2px;
 }
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
