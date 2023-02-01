@@ -183,11 +183,21 @@ const FormComponent: React.FC = () => {
               />
             </Box>
             <Box display="flex" justifyContent="end" mt="20px" gap="20px">
-              <Button type="button" color="secondary" variant="contained">
+              <Button
+                type="button"
+                color="secondary"
+                variant="outlined"
+                size="large"
+              >
                 {" "}
                 Clear Fields
               </Button>
-              <Button type="submit" color="success" variant="contained">
+              <Button
+                type="submit"
+                color="success"
+                variant="outlined"
+                size="large"
+              >
                 {" "}
                 Create New User
               </Button>
