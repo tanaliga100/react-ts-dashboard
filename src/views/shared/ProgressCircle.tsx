@@ -12,7 +12,6 @@ const ProgressCircle = (props: Props) => {
   const colors = tokens(theme.palette.mode);
 
   const angle = props?.progress * 360;
-  console.log("ANGLE", angle);
 
   return (
     <Box

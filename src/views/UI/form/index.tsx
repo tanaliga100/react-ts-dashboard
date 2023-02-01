@@ -57,7 +57,6 @@ const FormComponent: React.FC = () => {
       setValues: (values: FormValues) => void;
     }
   ) => {
-    console.log("VALUES", values);
     setSubmitting(false);
     setValues({
       firstName: "",

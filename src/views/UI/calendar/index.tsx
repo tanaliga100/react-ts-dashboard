@@ -24,7 +24,6 @@ const Calendar = (props: any) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
-  console.log("cURRENT EVENTS", currentEvents);
 
   const handleDateClick = (selected: any) => {
     const title = prompt("Please enter a new title");
