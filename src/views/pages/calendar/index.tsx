@@ -24,14 +24,15 @@ const Calendar = (props: Props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
+  console.log("cURRENT EVENTS", currentEvents);
 
   const handleDateClick = (selected: any) => {
     const title = prompt("Please enter a new title");
-    const calendarAPI = selected.view.calendar;
-    calendarAPI.unSelect();
+    const calendarApi = selected.view.calendar;
+    calendarApi.unselect();
 
     if (title) {
-      calendarAPI.addEvent({
+      calendarApi.addEvent({
         id: `${selected.dateStr}-${title}`,
         title,
         start: selected.startStr,
@@ -119,12 +120,12 @@ const Calendar = (props: Props) => {
               {
                 id: "12315",
                 title: "All-day event",
-                date: "2022-09-14",
+                date: "2023-01-01",
               },
               {
                 id: "5123",
                 title: "Timed event",
-                date: "2022-09-28",
+                date: "2023-01-02",
               },
             ]}
           />
