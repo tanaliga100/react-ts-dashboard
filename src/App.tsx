@@ -4,17 +4,17 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ColorModeContext, useMode } from "./theme";
 
-import Bar from "./views/pages/bar";
-import Calendar from "./views/pages/calendar";
-import Contacts from "./views/pages/contacts";
-import DashBoard from "./views/pages/dashboard";
-import Faq from "./views/pages/faq";
-import FormComponent from "./views/pages/form";
-import GeoChart from "./views/pages/geo";
-import Invoices from "./views/pages/invoices";
-import Line from "./views/pages/line";
-import Pie from "./views/pages/pie";
-import Team from "./views/pages/team";
+import Bar from "./views/UI/bar";
+import Calendar from "./views/UI/calendar";
+import Contacts from "./views/UI/contacts";
+import DashBoard from "./views/UI/dashboard";
+import Faq from "./views/UI/faq";
+import FormComponent from "./views/UI/form";
+import GeoChart from "./views/UI/geo";
+import Invoices from "./views/UI/invoices";
+import Line from "./views/UI/line";
+import Pie from "./views/UI/pie";
+import Team from "./views/UI/team";
 import SideBar from "./views/shared/SideBar";
 import TopBar from "./views/shared/TopBar";
 
