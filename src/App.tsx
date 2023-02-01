@@ -16,6 +16,7 @@ import DashBoard from "./views/pages/dashboard";
 // import Calendar from "./views/shared/Calendar";
 import Calendar from "./views/pages/calendar";
 import Contacts from "./views/pages/contacts";
+import Faq from "./views/pages/faq";
 import FormComponent from "./views/pages/form";
 import Invoices from "./views/pages/invoices";
 import Team from "./views/pages/team";
@@ -39,12 +40,12 @@ function App() {
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
               <Route path="/form" element={<FormComponent />} />
+              <Route path="/calendar" element={<Calendar />} />
               {/* <Route path="/bar" element={<Bar />} /> */}
               {/* <Route path="/pie" element={<Pie />} /> */}
               {/* <Route path="/line" element={<Line />} /> */}
-              {/* <Route path="/faq" element={<FAQ />} /> */}
+              <Route path="/faq" element={<Faq />} />
               {/* <Route path="/geography" element={<Geography />} /> */}
-              <Route path="/calendar" element={<Calendar />} />
             </Routes>
           </main>
         </div>

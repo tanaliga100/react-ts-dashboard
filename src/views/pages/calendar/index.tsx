@@ -13,14 +13,14 @@ import { tokens } from "../../../theme";
 import Header from "../../shared/Header";
 
 type Props = {
-  id: String;
-  title: String;
-  start: String;
-  end: String;
-  allDay: Boolean;
+  id?: String;
+  title?: String;
+  start?: String;
+  end?: String;
+  allDay?: Boolean;
 };
 
-const Calendar = (props: Props) => {
+const Calendar = (props: any) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
