@@ -65,29 +65,31 @@ const Calendar = (props: Props) => {
         >
           <Typography variant="h5">Events</Typography>
           <List>
-            {currentEvents.map((event) => (
-              <ListItem
-                key={event.id}
-                sx={{
-                  backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
-                }}
-              >
-                <ListItemText
-                  primary={event.title}
-                  secondary={
-                    <Typography>
-                      {formatDate(event.start, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
+            {currentEvents.map(
+              (event: { id: string; title: string; start: string }) => (
+                <ListItem
+                  key={event.id}
+                  sx={{
+                    backgroundColor: colors.greenAccent[500],
+                    margin: "10px 0",
+                    borderRadius: "2px",
+                  }}
+                >
+                  <ListItemText
+                    primary={event.title}
+                    secondary={
+                      <Typography>
+                        {formatDate(event.start, {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </Typography>
+                    }
+                  />
+                </ListItem>
+              )
+            )}
           </List>
         </Box>
         {/* CALENDAR  */}
@@ -112,7 +114,7 @@ const Calendar = (props: Props) => {
             dayMaxEvents={true}
             select={handleDateClick}
             eventClick={handleEventClick}
-            eventsSet={(events) => setCurrentEvents(events)}
+            eventsSet={(events: any) => setCurrentEvents(events)}
             initialEvents={[
               {
                 id: "12315",
