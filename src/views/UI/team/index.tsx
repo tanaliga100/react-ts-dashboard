@@ -53,21 +53,38 @@ const Team = (props: Props) => {
             justifyContent="center"
             borderRadius="5px"
             p="3px"
-            color={colors.primary[200]}
+            color={
+              access === "admin"
+                ? colors.redAccent[700]
+                : colors.greenAccent[700]
+            }
             sx={{
-              backgroundColor: [
-                (access === "admin" && colors.greenAccent[700]) ||
-                  (access === "manager" && colors.redAccent[800]) ||
-                  (access === "user" && colors.greenAccent[900]),
-              ],
+              backgroundColor: { backgroundColor: colors.primary[700] },
             }}
+            // sx={{
+            //   backgroundColor:
+            //     (access === "admin" && colors.greenAccent[700]) ||
+            //     (access === "manager" && colors.redAccent[800]) ||
+            //     (access === "user" && colors.greenAccent[900]),
+            // }}
           >
-            {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
-            {access === "manager" && <SecurityOutlinedIcon />}
-            {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[200]} sx={{ mx: "10px" }}>
-              {access}
-            </Typography>
+            <Box
+              display="flex"
+              px="10px"
+              gap="1rem"
+              justifyContent="space-between"
+              alignItems="center"
+              flexGrow="1"
+            >
+              <Box>
+                {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
+                {access === "manager" && <SecurityOutlinedIcon />}
+                {access === "user" && <LockOpenOutlinedIcon />}
+              </Box>
+              <Typography color={colors.grey[200]} m="auto">
+                {access}
+              </Typography>
+            </Box>
           </Box>
         );
       },

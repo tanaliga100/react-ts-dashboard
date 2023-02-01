@@ -110,7 +110,7 @@ const SideBar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/profile.png`}
+                  src={`../../assets/logo.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -121,7 +121,7 @@ const SideBar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  _blastAdmin
+                  blast_Admin
                 </Typography>
                 <Typography variant="h6" color={colors.greenAccent[500]}>
                   VP_ADMIN
